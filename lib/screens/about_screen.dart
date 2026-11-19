@@ -58,22 +58,20 @@ class AboutScreen extends StatelessWidget {
           _buildInfoCard(
             context,
             '¿Quién soy?',
-            'Soy Abdul Aboujokh, tengo 20 años y actualmente me encuentro '
-            'estudiando programación. Me apasiona el desarrollo de aplicaciones '
-            'y siempre estoy buscando aprender cosas nuevas en el mundo de la tecnología. '
-            'Nací en Venezuela y me considero una persona bastante curiosa, me gusta '
-            'entender cómo funcionan las cosas por dentro.',
+            'Soy Abdul Aboujokh, tengo 19 y el fin de semana cumplo 20. '
+            'Me encuentro estudiando en el séptimo trimestre, aunque estoy algo atrasado por choques de horario. '
+            'Me gusta bastante jugar videojuegos de todo tipo, pero sobre todo FPS, terror estilo Resident Evil / The Last of Us, '
+            'o de carreras como Forza Horizon.',
           ),
 
           const SizedBox(height: 12),
 
           _buildInfoCard(
             context,
-            'Mi camino',
-            'Desde chamo siempre me llamó la atención la computación. Empecé trasteando '
-            'cosas básicas en la PC de mi casa y poco a poco fui descubriendo que lo mío '
-            'era programar. Hoy en día estoy enfocado en Flutter y desarrollo móvil, '
-            'aunque también he tocado un poco de web y backend.',
+            'Un poco sobre mí',
+            'Desde primer año me empezó a llamar la atención el tema de la computación, '
+            'y aprendí lo básico con mi primo las veces que venía a mi casa y me llamó '
+            'tanto la atención que terminé decidiendo estudiar algo relacionado con programar.',
           ),
 
           const SizedBox(height: 12),
@@ -92,9 +90,9 @@ class AboutScreen extends StatelessWidget {
                   )),
                   const Divider(color: AppThemes.borderColor),
                   _datoRapido('📍', 'Venezuela'),
-                  _datoRapido('🎂', '20 años'),
-                  _datoRapido('💻', 'Desarrollo móvil'),
-                  _datoRapido('🗣️', 'Español / Inglés'),
+                  _datoRapido('🎂', '19 años'),
+                  _datoRapido('💻', 'Desarrollo de aplicaciones / páginas web en otros lenguajes'),
+                  _datoRapido('🗣️', 'Español / Inglés / Árabe'),
                 ],
               ),
             ),
