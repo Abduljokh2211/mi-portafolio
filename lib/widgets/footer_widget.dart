@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mi_portafolio/themes/app_themes.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class FooterWidget extends StatelessWidget {
   const FooterWidget({super.key});
@@ -7,30 +8,35 @@ class FooterWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 16),
+      padding: const EdgeInsets.symmetric(vertical: 20),
       decoration: const BoxDecoration(
         border: Border(
           top: BorderSide(color: AppThemes.borderColor, width: 1),
         ),
       ),
-      child: Column(
-        children: [
-          Text(
-            'Abdul Aboujokh © 2026',
+      child: Center(
+        child: ElevatedButton.icon(
+          onPressed: () => Navigator.pushNamed(context, '/contact'),
+          icon: const FaIcon(FontAwesomeIcons.solidEnvelope, size: 15),
+          label: const Text(
+            'Contáctame',
             style: TextStyle(
-              color: AppThemes.textGray,
-              fontSize: 12,
+              fontSize: 14,
+              fontWeight: FontWeight.w600,
+              letterSpacing: 0.3,
             ),
           ),
-          const SizedBox(height: 2),
-          Text(
-            'Hecho con Flutter 💙',
-            style: TextStyle(
-              color: AppThemes.textGray.withValues(alpha: 0.6),
-              fontSize: 11,
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.black,
+            foregroundColor: Colors.white,
+            padding: const EdgeInsets.symmetric(horizontal: 26, vertical: 12),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
+              side: const BorderSide(color: AppThemes.borderColor, width: 1.2),
             ),
+            elevation: 0,
           ),
-        ],
+        ),
       ),
     );
   }
