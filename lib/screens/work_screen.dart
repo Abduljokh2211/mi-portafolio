@@ -48,10 +48,11 @@ class WorkScreen extends StatelessWidget {
           const SizedBox(height: 10),
 
           _skillCard(
-            icon: FontAwesomeIcons.python,
-            titulo: 'Programación & Lógica',
+            icon: FontAwesomeIcons.code,
+            titulo: 'Python & C#',
             descripcion: 'He trabajado con Python para resolver problemas y afianzar '
-                'la lógica de programación. También manejo lo básico de desarrollo web.',
+                'la lógica. También vimos C# en Programación II, aunque sinceramente no '
+                'me gustó tanto porque se me complicó un poco en esa materia jaja.',
           ),
 
           const SizedBox(height: 10),
@@ -95,6 +96,7 @@ class WorkScreen extends StatelessWidget {
                       _techChip('Flutter'),
                       _techChip('Dart'),
                       _techChip('Python'),
+                      _techChip('C#'),
                       _techChip('HTML/CSS'),
                       _techChip('MySQL'),
                       _techChip('Git'),
