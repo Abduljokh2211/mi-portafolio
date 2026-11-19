@@ -1,19 +1,18 @@
-import 'package:mi_portafolio/screens/home_screen.dart';
-import 'package:mi_portafolio/screens/about_screen.dart';
-import 'package:mi_portafolio/screens/work_screen.dart';
-import 'package:mi_portafolio/screens/hobbies_screen.dart';
-import 'package:mi_portafolio/screens/contact_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:mi_portafolio/screens/screens.dart';
 
 class AppRoutes {
 
-  static const initialRoute = '/';
+  // ruta con la que arranca la aplicacion
+  static const String initialRoute = '/';
 
+  // mapa con todas las rutas para navegar con Navigator.pushNamed
   static Map<String, Widget Function(BuildContext)> routes = {
-    '/': (_) => const HomeScreen(),
-    '/about': (_) => const AboutScreen(),
-    '/work': (_) => const WorkScreen(),
-    '/hobbies': (_) => const HobbiesScreen(),
-    '/contact': (_) => const ContactScreen(),
+    '/'        : (BuildContext context) => const HomeScreen(),
+    '/about'   : (BuildContext context) => const AboutScreen(),
+    '/work'    : (BuildContext context) => const WorkScreen(),
+    '/hobbies' : (BuildContext context) => const HobbiesScreen(),
+    '/contact' : (BuildContext context) => const ContactScreen(),
   };
+
 }

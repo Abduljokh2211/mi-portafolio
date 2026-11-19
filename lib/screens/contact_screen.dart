@@ -18,7 +18,8 @@ class ContactScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // avatar grande
+
+              // avatar con la foto de perfil
               Container(
                 width: 100,
                 height: 100,
@@ -42,8 +43,10 @@ class ContactScreen extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
+
               const SizedBox(height: 4),
-              Text(
+
+              const Text(
                 'Desarrollador en formación',
                 style: TextStyle(
                   color: AppThemes.textGray,
@@ -51,9 +54,9 @@ class ContactScreen extends StatelessWidget {
                 ),
               ),
 
-              const SizedBox(height: 30),
+              const SizedBox(height: 24),
 
-              // separador
+              // linea divisoria con acento azul
               Container(
                 width: 60,
                 height: 3,
@@ -63,9 +66,9 @@ class ContactScreen extends StatelessWidget {
                 ),
               ),
 
-              const SizedBox(height: 30),
+              const SizedBox(height: 24),
 
-              // info de contacto
+              // tarjeta con la informacion de contacto
               Card(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 8),
@@ -102,6 +105,7 @@ class ContactScreen extends StatelessWidget {
     );
   }
 
+  // item de contacto reutilizable
   Widget _contactItem({
     required FaIconData icon,
     required String label,
@@ -116,6 +120,7 @@ class ContactScreen extends StatelessWidget {
     );
   }
 
+  // funcion para abrir urls externas con el paquete url_launcher
   void _abrirUrl(String url) async {
     final uri = Uri.parse(url);
     if (await canLaunchUrl(uri)) {

@@ -14,20 +14,24 @@ class HobbiesScreen extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
+
           Text(
             'Mis Pasatiempos',
             style: Theme.of(context).textTheme.headlineSmall?.copyWith(
               fontWeight: FontWeight.bold,
             ),
           ),
+
           const SizedBox(height: 4),
-          Text(
+
+          const Text(
             'Las cosas que disfruto hacer en mi tiempo libre',
             style: TextStyle(color: AppThemes.textGray, fontSize: 14),
           ),
 
           const SizedBox(height: 20),
 
+          // Se usan cards independientes en lugar de imagenes de red para mantener la interfaz rapida y limpia
           _hobbyCard(
             emoji: '🎮',
             titulo: 'Videojuegos',
@@ -69,12 +73,14 @@ class HobbiesScreen extends StatelessWidget {
           ),
 
           const SizedBox(height: 30),
+
           const FooterWidget(),
         ],
       ),
     );
   }
 
+  // funcion para crear el diseno de cada tarjeta de hobby
   Widget _hobbyCard({
     required String emoji,
     required String titulo,
@@ -113,7 +119,7 @@ class HobbiesScreen extends StatelessWidget {
                       const SizedBox(height: 2),
                       Text(
                         subtitulo,
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: AppThemes.accentBlue,
                           fontSize: 12,
                           fontWeight: FontWeight.w500,

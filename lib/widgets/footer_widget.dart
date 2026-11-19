@@ -15,8 +15,11 @@ class FooterWidget extends StatelessWidget {
         ),
       ),
       child: Center(
+        // boton para redirigir a la pantalla de contacto
         child: ElevatedButton.icon(
-          onPressed: () => Navigator.pushNamed(context, '/contact'),
+          onPressed: () {
+            Navigator.pushNamed(context, '/contact');
+          },
           icon: const FaIcon(FontAwesomeIcons.solidEnvelope, size: 15),
           label: const Text(
             'Contáctame',

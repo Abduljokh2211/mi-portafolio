@@ -1,8 +1,11 @@
+import 'package:flutter/material.dart';
 import 'package:mi_portafolio/routes/app_routes.dart';
 import 'package:mi_portafolio/themes/app_themes.dart';
-import 'package:flutter/material.dart';
 
-void main() => runApp(const MyApp());
+// main lo mas limpio posible como pidio el profesor
+void main() {
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -12,7 +15,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Abdul Portafolio',
       debugShowCheckedModeBanner: false,
+      // tema oscuro configurado en app_themes.dart
       theme: AppThemes.darkTheme,
+      // manejo de rutas de app_routes.dart
       routes: AppRoutes.routes,
       initialRoute: AppRoutes.initialRoute,
     );

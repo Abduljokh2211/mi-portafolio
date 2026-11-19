@@ -14,7 +14,8 @@ class AboutScreen extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
         children: [
-          // foto de perfil arriba
+
+          // foto de perfil con borde azul
           Center(
             child: Container(
               width: 120,
@@ -32,7 +33,6 @@ class AboutScreen extends StatelessWidget {
 
           const SizedBox(height: 16),
 
-          // nombre
           Text(
             'Abdul Aboujokh',
             textAlign: TextAlign.center,
@@ -43,7 +43,8 @@ class AboutScreen extends StatelessWidget {
           ),
 
           const SizedBox(height: 6),
-          Text(
+
+          const Text(
             'Estudiante de Desarrollo de Software',
             textAlign: TextAlign.center,
             style: TextStyle(
@@ -54,7 +55,7 @@ class AboutScreen extends StatelessWidget {
 
           const SizedBox(height: 24),
 
-          // sobre mi - texto
+          // seccion quien soy
           _buildInfoCard(
             context,
             '¿Quién soy?',
@@ -66,6 +67,7 @@ class AboutScreen extends StatelessWidget {
 
           const SizedBox(height: 12),
 
+          // seccion un poco sobre mi
           _buildInfoCard(
             context,
             'Un poco sobre mí',
@@ -76,18 +78,21 @@ class AboutScreen extends StatelessWidget {
 
           const SizedBox(height: 12),
 
-          // datos rapidos
+          // tarjeta de datos rapidos
           Card(
             child: Padding(
               padding: const EdgeInsets.all(16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Datos rápidos', style: TextStyle(
-                    color: AppThemes.accentBlue,
-                    fontWeight: FontWeight.w600,
-                    fontSize: 16,
-                  )),
+                  const Text(
+                    'Datos rápidos',
+                    style: TextStyle(
+                      color: AppThemes.accentBlue,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 16,
+                    ),
+                  ),
                   const Divider(color: AppThemes.borderColor),
                   _datoRapido('📍', 'Venezuela'),
                   _datoRapido('🎂', '19 años'),
@@ -99,12 +104,14 @@ class AboutScreen extends StatelessWidget {
           ),
 
           const SizedBox(height: 30),
+
           const FooterWidget(),
         ],
       ),
     );
   }
 
+  // metodo auxiliar para reutilizar el diseno de las tarjetas de texto
   Widget _buildInfoCard(BuildContext context, String titulo, String contenido) {
     return Card(
       child: Padding(
@@ -112,23 +119,30 @@ class AboutScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(titulo, style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w600,
-              color: AppThemes.accentBlue,
-            )),
+            Text(
+              titulo,
+              style: const TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+                color: AppThemes.accentBlue,
+              ),
+            ),
             const SizedBox(height: 8),
-            Text(contenido, style: TextStyle(
-              color: Colors.white70,
-              fontSize: 14,
-              height: 1.5,
-            )),
+            Text(
+              contenido,
+              style: const TextStyle(
+                color: Colors.white70,
+                fontSize: 14,
+                height: 1.5,
+              ),
+            ),
           ],
         ),
       ),
     );
   }
 
+  // widget para cada fila con emoji y texto (usamos Expanded para evitar desbordes)
   Widget _datoRapido(String emoji, String texto) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 4),
@@ -136,7 +150,12 @@ class AboutScreen extends StatelessWidget {
         children: [
           Text(emoji, style: const TextStyle(fontSize: 16)),
           const SizedBox(width: 10),
-          Text(texto, style: const TextStyle(color: Colors.white70)),
+          Expanded(
+            child: Text(
+              texto,
+              style: const TextStyle(color: Colors.white70),
+            ),
+          ),
         ],
       ),
     );

@@ -15,20 +15,22 @@ class WorkScreen extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          // header con icono
+
+          // icono principal de la pantalla
           Container(
-            padding: const EdgeInsets.symmetric(vertical: 24),
-            child: Column(
+            padding: const EdgeInsets.symmetric(vertical: 20),
+            child: const Column(
               children: [
                 FaIcon(
                   FontAwesomeIcons.code,
-                  size: 48,
+                  size: 44,
                   color: AppThemes.accentBlue,
                 ),
-                const SizedBox(height: 12),
+                SizedBox(height: 12),
                 Text(
                   'Desarrollo de Software',
-                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                  style: TextStyle(
+                    fontSize: 22,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -36,7 +38,7 @@ class WorkScreen extends StatelessWidget {
             ),
           ),
 
-          // lo que hago
+          // tarjetas de habilidades y experiencia
           _skillCard(
             icon: FontAwesomeIcons.mobile,
             titulo: 'Desarrollo Móvil',
@@ -73,18 +75,21 @@ class WorkScreen extends StatelessWidget {
 
           const SizedBox(height: 20),
 
-          // tecnologias
+          // listado de tecnologias usando Wrap y chips personalizados
           Card(
             child: Padding(
               padding: const EdgeInsets.all(16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Tecnologías que uso', style: TextStyle(
-                    color: AppThemes.accentBlue,
-                    fontWeight: FontWeight.w600,
-                    fontSize: 16,
-                  )),
+                  const Text(
+                    'Tecnologías que uso',
+                    style: TextStyle(
+                      color: AppThemes.accentBlue,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 16,
+                    ),
+                  ),
                   const Divider(color: AppThemes.borderColor),
                   const SizedBox(height: 8),
                   Wrap(
@@ -108,13 +113,20 @@ class WorkScreen extends StatelessWidget {
           ),
 
           const SizedBox(height: 30),
+
           const FooterWidget(),
         ],
       ),
     );
   }
 
-  Widget _skillCard({required FaIconData icon, required String titulo, required String descripcion}) {
+  // widget para construir cada tarjeta de habilidad
+  // se usa FaIconData para los iconos de font_awesome_flutter
+  Widget _skillCard({
+    required FaIconData icon,
+    required String titulo,
+    required String descripcion,
+  }) {
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(14),
@@ -134,16 +146,22 @@ class WorkScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(titulo, style: const TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 15,
-                  )),
+                  Text(
+                    titulo,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 15,
+                    ),
+                  ),
                   const SizedBox(height: 4),
-                  Text(descripcion, style: TextStyle(
-                    color: AppThemes.textGray,
-                    fontSize: 13,
-                    height: 1.4,
-                  )),
+                  Text(
+                    descripcion,
+                    style: const TextStyle(
+                      color: AppThemes.textGray,
+                      fontSize: 13,
+                      height: 1.4,
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -153,6 +171,7 @@ class WorkScreen extends StatelessWidget {
     );
   }
 
+  // chip sencillo para mostrar cada etiqueta de tecnologia
   Widget _techChip(String label) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
@@ -161,11 +180,14 @@ class WorkScreen extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         border: Border.all(color: AppThemes.accentBlue.withValues(alpha: 0.3)),
       ),
-      child: Text(label, style: TextStyle(
-        color: AppThemes.accentBlue,
-        fontSize: 12,
-        fontWeight: FontWeight.w500,
-      )),
+      child: Text(
+        label,
+        style: const TextStyle(
+          color: AppThemes.accentBlue,
+          fontSize: 12,
+          fontWeight: FontWeight.w500,
+        ),
+      ),
     );
   }
 }
