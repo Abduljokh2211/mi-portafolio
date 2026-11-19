@@ -40,9 +40,8 @@ class WorkScreen extends StatelessWidget {
           _skillCard(
             icon: FontAwesomeIcons.mobile,
             titulo: 'Desarrollo Móvil',
-            descripcion: 'Estoy aprendiendo Flutter y Dart para crear apps '
-                'que funcionen tanto en Android como iOS. Este portafolio '
-                'es parte de ese proceso jaja.',
+            descripcion: 'Actualmente enfocado en aprender Flutter y Dart para crear '
+                'aplicaciones multiplataforma. Este portafolio es un reflejo de mi avance.',
           ),
 
           const SizedBox(height: 10),
@@ -50,9 +49,8 @@ class WorkScreen extends StatelessWidget {
           _skillCard(
             icon: FontAwesomeIcons.code,
             titulo: 'Python & C#',
-            descripcion: 'He trabajado con Python para resolver problemas y afianzar '
-                'la lógica. También vimos C# en Programación II, aunque sinceramente no '
-                'me gustó tanto porque se me complicó un poco en esa materia jaja.',
+            descripcion: 'He trabajado con Python para resolución de problemas y fundamentos lógicos. '
+                'También cursé C# en Programación II, profundizando en programación orientada a objetos.',
           ),
 
           const SizedBox(height: 10),
@@ -60,8 +58,8 @@ class WorkScreen extends StatelessWidget {
           _skillCard(
             icon: FontAwesomeIcons.database,
             titulo: 'Bases de Datos',
-            descripcion: 'He trabajado con MySQL y SQLite en proyectos de clase. '
-                'Todavía me falta mucho por aprender pero voy agarrando el ritmo.',
+            descripcion: 'Experiencia académica con MySQL y SQLite en proyectos universitarios, '
+                'enfocándome en diseño relacional y consultas estructuradas.',
           ),
 
           const SizedBox(height: 10),
@@ -69,8 +67,8 @@ class WorkScreen extends StatelessWidget {
           _skillCard(
             icon: FontAwesomeIcons.github,
             titulo: 'Control de Versiones',
-            descripcion: 'Uso Git y GitHub para manejar mis proyectos. '
-                'Al principio me costó pero ya le agarré el truco.',
+            descripcion: 'Uso constante de Git y GitHub para el versionado de proyectos '
+                'y buenas prácticas de desarrollo de software.',
           ),
 
           const SizedBox(height: 20),

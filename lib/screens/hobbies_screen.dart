@@ -32,9 +32,9 @@ class HobbiesScreen extends StatelessWidget {
             emoji: '🎮',
             titulo: 'Videojuegos',
             subtitulo: 'CS2 · Fortnite · GTA',
-            desc: 'Me gusta bastante jugar al Counter-Strike 2 (CS2) y al Fortnite. '
-                'También disfruto mucho de juegos como el GTA '
-                '(por ahora me pierdo el GTA 6 mientras sale para PC jaja).',
+            desc: 'Disfruto jugar al Counter-Strike 2 (CS2) y a Fortnite. '
+                'También sigo de cerca sagas de mundo abierto como Grand Theft Auto '
+                '(a la espera del lanzamiento oficial de GTA 6 en PC).',
           ),
 
           const SizedBox(height: 12),
