@@ -6,7 +6,7 @@ class SectionTile extends StatelessWidget {
 
   final String title;
   final String subtitle;
-  final IconData icon;
+  final FaIconData icon;
   final VoidCallback onTap;
 
   const SectionTile({

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mi_portafolio/themes/app_themes.dart';
 import 'package:mi_portafolio/widgets/header_card.dart';
 import 'package:mi_portafolio/widgets/section_tile.dart';
 import 'package:mi_portafolio/widgets/footer_widget.dart';

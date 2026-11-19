@@ -122,7 +122,7 @@ class ContactScreen extends StatelessWidget {
   }
 
   Widget _contactItem({
-    required IconData icon,
+    required FaIconData icon,
     required String label,
     required String value,
     required VoidCallback onTap,

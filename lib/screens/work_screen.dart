@@ -114,7 +114,7 @@ class WorkScreen extends StatelessWidget {
     );
   }
 
-  Widget _skillCard({required IconData icon, required String titulo, required String descripcion}) {
+  Widget _skillCard({required FaIconData icon, required String titulo, required String descripcion}) {
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(14),
