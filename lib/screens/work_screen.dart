@@ -48,10 +48,10 @@ class WorkScreen extends StatelessWidget {
           const SizedBox(height: 10),
 
           _skillCard(
-            icon: FontAwesomeIcons.globe,
-            titulo: 'Desarrollo Web',
-            descripcion: 'Tengo conocimientos básicos de HTML, CSS y JavaScript. '
-                'He hecho algunas páginas sencillas para practicar.',
+            icon: FontAwesomeIcons.python,
+            titulo: 'Programación & Lógica',
+            descripcion: 'He trabajado con Python para resolver problemas y afianzar '
+                'la lógica de programación. También manejo lo básico de desarrollo web.',
           ),
 
           const SizedBox(height: 10),
@@ -94,7 +94,7 @@ class WorkScreen extends StatelessWidget {
                     children: [
                       _techChip('Flutter'),
                       _techChip('Dart'),
-                      _techChip('JavaScript'),
+                      _techChip('Python'),
                       _techChip('HTML/CSS'),
                       _techChip('MySQL'),
                       _techChip('Git'),

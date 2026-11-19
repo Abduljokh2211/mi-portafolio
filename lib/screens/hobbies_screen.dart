@@ -15,63 +15,57 @@ class HobbiesScreen extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         children: [
           Text(
-            'Lo que me gusta hacer',
+            'Mis Pasatiempos',
             style: Theme.of(context).textTheme.headlineSmall?.copyWith(
               fontWeight: FontWeight.bold,
             ),
           ),
           const SizedBox(height: 4),
           Text(
-            'Fuera del código también tengo vida jaja',
+            'Las cosas que disfruto hacer en mi tiempo libre',
             style: TextStyle(color: AppThemes.textGray, fontSize: 14),
           ),
 
           const SizedBox(height: 20),
 
           _hobbyCard(
-            context,
             emoji: '🎮',
             titulo: 'Videojuegos',
-            desc: 'Me gustan los juegos de mundo abierto y FPS. '
-                'Últimamente le he metido bastante al Valorant y al '
-                'GTA. También me gustan los juegos de historia.',
-            imgUrl: 'https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=600',
+            subtitulo: 'CS2 · Fortnite · GTA',
+            desc: 'Me gusta bastante jugar al Counter-Strike 2 (CS2) y al Fortnite. '
+                'También disfruto mucho de juegos como el GTA '
+                '(por ahora me pierdo el GTA 6 mientras sale para PC jaja).',
           ),
 
           const SizedBox(height: 12),
 
           _hobbyCard(
-            context,
             emoji: '🎵',
             titulo: 'Música',
-            desc: 'Escucho de todo un poco, pero lo que más me gusta es '
-                'el rap y el R&B. Siempre tengo los audífonos puestos '
-                'cuando estoy programando, me ayuda a concentrarme.',
-            imgUrl: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600',
+            subtitulo: 'Urbano · Trap · Reggaetón',
+            desc: 'La música siempre me acompaña en el día a día. Escucho bastante a '
+                'Rauw Alejandro, Omar Courtz, Jhay Cortez, Anuel, Bad Bunny, '
+                'Jay Wheeler y más artistas de ese estilo.',
           ),
 
           const SizedBox(height: 12),
 
           _hobbyCard(
-            context,
-            emoji: '🏋️',
-            titulo: 'Ejercicio',
-            desc: 'Trato de ir al gym cuando puedo. No soy el más '
-                'constante pero me gusta mantenerme activo. '
-                'También salgo a caminar de vez en cuando.',
-            imgUrl: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600',
+            emoji: '🚗',
+            titulo: 'Manejar',
+            subtitulo: 'Honda Accord',
+            desc: 'Tengo un Honda Accord y salir a manejar es sin duda de mis '
+                'pasatiempos favoritos. Me relaja bastante salir a dar vueltas y despejar la mente.',
           ),
 
           const SizedBox(height: 12),
 
           _hobbyCard(
-            context,
-            emoji: '📺',
+            emoji: '🎬',
             titulo: 'Series y Películas',
-            desc: 'Fan de las series de suspenso y ciencia ficción. '
-                'Breaking Bad es mi serie favorita de todos los tiempos. '
-                'También veo anime de vez en cuando.',
-            imgUrl: 'https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=600',
+            subtitulo: 'Terror & Suspenso',
+            desc: 'Me gustan mucho las series y películas de terror. '
+                'Por ejemplo, Welcome to Derry es mi favorita.',
           ),
 
           const SizedBox(height: 30),
@@ -81,68 +75,68 @@ class HobbiesScreen extends StatelessWidget {
     );
   }
 
-  Widget _hobbyCard(
-    BuildContext context, {
+  Widget _hobbyCard({
     required String emoji,
     required String titulo,
+    required String subtitulo,
     required String desc,
-    required String imgUrl,
   }) {
     return Card(
-      clipBehavior: Clip.antiAlias,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // imagen del hobby
-          SizedBox(
-            height: 150,
-            width: double.infinity,
-            child: Image.network(
-              imgUrl,
-              fit: BoxFit.cover,
-              // si falla la imagen no quiero que explote la app
-              errorBuilder: (context, error, stackTrace) {
-                return Container(
-                  color: AppThemes.cardColor,
-                  child: const Center(
-                    child: Icon(Icons.image_not_supported, color: AppThemes.textGray, size: 40),
-                  ),
-                );
-              },
-              loadingBuilder: (context, child, loadingProgress) {
-                if (loadingProgress == null) return child;
-                return Container(
-                  color: AppThemes.cardColor,
-                  child: const Center(child: CircularProgressIndicator()),
-                );
-              },
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(14),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
               children: [
-                Row(
-                  children: [
-                    Text(emoji, style: const TextStyle(fontSize: 22)),
-                    const SizedBox(width: 8),
-                    Text(titulo, style: const TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 16,
-                    )),
-                  ],
+                Container(
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: AppThemes.accentBlue.withValues(alpha: 0.15),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Text(emoji, style: const TextStyle(fontSize: 22)),
                 ),
-                const SizedBox(height: 8),
-                Text(desc, style: TextStyle(
-                  color: AppThemes.textGray,
-                  fontSize: 13,
-                  height: 1.5,
-                )),
+                const SizedBox(width: 14),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        titulo,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 16,
+                          color: Colors.white,
+                        ),
+                      ),
+                      const SizedBox(height: 2),
+                      Text(
+                        subtitulo,
+                        style: TextStyle(
+                          color: AppThemes.accentBlue,
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
-          ),
-        ],
+            const SizedBox(height: 12),
+            const Divider(color: AppThemes.borderColor, height: 1),
+            const SizedBox(height: 12),
+            Text(
+              desc,
+              style: TextStyle(
+                color: Colors.white.withValues(alpha: 0.8),
+                fontSize: 13.5,
+                height: 1.5,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
