@@ -95,25 +95,6 @@ class ContactScreen extends StatelessWidget {
                   ),
                 ),
               ),
-
-              const Spacer(),
-
-              // firma
-              Text(
-                'Hecho con 💙 en Flutter',
-                style: TextStyle(
-                  color: AppThemes.textGray,
-                  fontSize: 12,
-                ),
-              ),
-              const SizedBox(height: 4),
-              Text(
-                '© 2026 Abdul Aboujokh',
-                style: TextStyle(
-                  color: AppThemes.textGray.withValues(alpha: 0.6),
-                  fontSize: 11,
-                ),
-              ),
             ],
           ),
         ),
